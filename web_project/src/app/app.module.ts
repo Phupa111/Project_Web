@@ -11,7 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MenuComponent } from './page/menu/menu.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './service/data.service';
 
 
 
@@ -29,9 +30,12 @@ import { MenuComponent } from './page/menu/menu.component';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

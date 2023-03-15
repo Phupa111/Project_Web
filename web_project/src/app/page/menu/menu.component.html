@@ -6,6 +6,7 @@
   </div>
 </div>
 <div style="
+
   display: flex;
   position: relative;
   justify-content: center;
@@ -13,35 +14,19 @@
   width: 100%;
 ">
   <div
-    style="
-      margin-top: 20px;
-      display: flex;
-      position: relative;
-      justify-content: start;
-      margin-left: 20px;
-      margin-right: 20px;
-      background-color: rgb(160, 127, 17);
-      width: 33.33%;
-    "
-    *ngFor="let food of this.Foods"
+     class="container"
+    *ngFor="let food of this.foods"
   >
-    <div class="grow img">
-      <img
-        src="{{ food.image }}"
-        alt=""
-        width="400px"
-      />
-    </div>
-    <div style="display: flex; position: relative; flex-direction: column">
-      <div style="margin-left: 20px">
-        <span style="font-size: 30px">{{ food.name }}</span>
-      </div>
-      <div style="margin-left: 20px">
-        ราคา :{{ food.price}}
-      </div>
-      <div style="margin-left: 20px">
-        ประเภท :{{ food.FTID }}
-      </div>
-    </div>
+  <img src="{{food.image}}" alt="" class="image">
+  <div class="middle">
+    <div class="text">{{food.name}}</div>
+    <div class="text">ราคา : {{food.price}}</div>
+    <div class="text">ประเภท : {{food.type}}</div>
+
+
+
+  </div>
+
+
   </div>
 </div>
