@@ -13,7 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MenuComponent } from './page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data.service';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import { DataService } from './service/data.service';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     DataService

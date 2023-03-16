@@ -1,5 +1,5 @@
 export class DataService{
-  apiEndpoint = 'http://localhost/projectWebapi';
+  apiEndpoint = 'http://localhost/WebApiGit';
   constructor()
   {}
 }

@@ -1,32 +1,33 @@
 <div class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size:50px">คาปิบาลาบ</h1>
-    <p>คุณหิวรึยังครับ......</p>
+    <h1 style="font-size:50px">カーピバラープ    </h1>
+    <p>お腹すいた 何食べよ...</p>
 
   </div>
 </div>
-<div style="
-
-  display: flex;
-  position: relative;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-">
-  <div
-     class="container"
-    *ngFor="let food of this.foods"
-  >
-  <img src="{{food.image}}" alt="" class="image">
-  <div class="middle">
-    <div class="text">{{food.name}}</div>
-    <div class="text">ราคา : {{food.price}}</div>
-    <div class="text">ประเภท : {{food.type}}</div>
+<div style="text-align: center; margin-top: 1%; margin-bottom: 1%;" >
+  <button mat-raised-button style="background-color: rgb(160, 127, 17); color: white;" (click)="findAll()">ทุกประเภท</button>
+  <button mat-raised-button style=" background-color: rgb(160, 127, 17); color: white ; margin-left: 25px;" *ngFor="let foodtype of this.foodtypes " (click)="findByFoodtype(foodtype.name)">
+    {{foodtype.name}}
+  </button>
 
 
 
-  </div>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let food of this.foods">
+      <div class="card">
+        <img class="card-img-top img-fluid" src="{{food.image}}" alt="" style="width: 500px; height: 250px;">
+        <h1 class="card-title" style="color: rgb(160, 127, 17);">{{food.name}}</h1>
+        <h3 class="card-text" style="color: rgb(160, 127, 17);">ราคา : {{food.price}}</h3>
+        <h3 class="card-text" style="color: rgb(160, 127, 17);">ประเภท : {{food.type}}</h3>
+        <a class="btn btn-primary">+</a>
+        <h1 style="text-align: center;color: rgb(160, 127, 17); ">0</h1>
+        <a class="btn btn-primary">-</a>
 
+      </div>
+    </div>
   </div>
 </div>
