@@ -14,6 +14,7 @@ import { MenuComponent } from './page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data.service';
 import { FormsModule } from '@angular/forms';
+import { OwnerComponent } from './page/owner/owner.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     FootterComponent,
-    MenuComponent
+    MenuComponent,
+    OwnerComponent
   ],
   imports: [
     BrowserModule,
