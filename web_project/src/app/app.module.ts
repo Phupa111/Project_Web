@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { MenuComponent } from './page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data.service';
+import { OrderComponent } from './page/order/order.component';
+import { OwnerComponent } from './page/owner/owner.component';
 
 
 
@@ -21,7 +23,9 @@ import { DataService } from './service/data.service';
     AppComponent,
     HeaderComponent,
     FootterComponent,
-    MenuComponent
+    MenuComponent,
+    OrderComponent,
+    OwnerComponent
   ],
   imports: [
     BrowserModule,
