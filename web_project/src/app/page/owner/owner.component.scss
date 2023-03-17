@@ -1,0 +1,22 @@
+.barList{
+  display: flex;
+  flex-direction: row;
+  background-color: #EC4E4E ;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.detailList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: black;
+}

@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 20px;font-family: 'Athiti', sans-serif;">
+  <div style="display: flex;justify-content: center;margin-top: 20px;font-size: 30px;color: black;font-weight: bold;">
+    <span>รายละเอียดการสั่งอาหาร</span>
+  </div>
+  <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" *ngFor="let showDetailOrder of this.dt">
+    <span style="margin-top: 20px;">ผู้สั่ง: {{showDetailOrder.name}}</span>
+    <span style="margin-top: 20px;">สถานะการจัดส่ง: {{showDetailOrder.status}} </span>
+    <span style="margin-top: 20px;">ราคารวม: {{showDetailOrder.totalPrice}}</span>
+    <span style="margin-top: 20px;">วัน: {{showDetailOrder.day}}</span>
+  </div>
+  <div style="display: flex;justify-content: center;color: black;margin-top: 20px">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">ราคา</th>
+          <th scope="col">จำนวน</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fdetail of this.ownerdetails">
+          <td >{{fdetail.name}}</td>
+          <td >{{fdetail.price}}</td>
+          <td >{{fdetail.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" style="margin-left: 10px;height: 30px;" routerLink=".." (click)="back()">
+      Back
+    </button>
+  </div>
+
+</div>

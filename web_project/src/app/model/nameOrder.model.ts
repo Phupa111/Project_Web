@@ -2,11 +2,9 @@
 //
 //   import { Convert } from "./file";
 //
-//   const owner = Convert.toOwner(json);
+//   const nameOrder = Convert.toNameOrder(json);
 
-export interface Owner {
-  bid:        number;
-  cid:        number;
+export interface NameOrder {
   name:       string;
   status:     string;
   totalPrice: number;
@@ -15,11 +13,11 @@ export interface Owner {
 
 // Converts JSON strings to/from your types
 export class Convert {
-  public static toOwner(json: string): Owner[] {
+  public static toNameOrder(json: string): NameOrder[] {
       return JSON.parse(json);
   }
 
-  public static ownerToJson(value: Owner[]): string {
+  public static nameOrderToJson(value: NameOrder[]): string {
       return JSON.stringify(value);
   }
 }

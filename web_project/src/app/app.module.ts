@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './service/data.service';
 import { FormsModule } from '@angular/forms';
 import { OwnerComponent } from './page/owner/owner.component';
+import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { OwnerComponent } from './page/owner/owner.component';
     HeaderComponent,
     FootterComponent,
     MenuComponent,
-    OwnerComponent
+    OwnerComponent,
+    OwnerdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { OwnerComponent } from './page/owner/owner.component';
     MatMenuModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [
     DataService
