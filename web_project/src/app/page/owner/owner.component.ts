@@ -13,7 +13,12 @@ export class OwnerComponent {
   constructor(private dataService : DataService,private http : HttpClient){
     http.get(dataService.apiEndpoint + '/order').subscribe((data : any)=>{
       this.owners = ownerCvt.toOwner(JSON.stringify(data));
-      console.log(this.owners);
+      // console.log(this.owners);
     });
+  }
+
+  goToDetail(owner:any){
+    this.dataService.detail = owner;
+
   }
 }

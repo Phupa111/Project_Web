@@ -1,3 +1,19 @@
+<!-- style="display: flex;flex-direction: row;background-color: #EC4E4E ;justify-content: space-around;" -->
 <div class="container-fluid">
-  <div></div>
+  <div class="barList">
+    <span>หมายเลขบิล</span>
+    <span>ชื่อผู้สั่ง</span>
+    <span>ราคารวม</span>
+    <span>ปี/เดือน/วัน</span>
+    <span>สถานะ</span>
+    <span style="color: #EC4E4E ;">ดูรายละเอียด</span>
+  </div>
+  <div class="detailList" *ngFor="let owner of this.owners">
+    <span>{{owner.bid}}</span>
+    <span>{{owner.name}}</span>
+    <span>{{owner.totalPrice}}</span>
+    <span>{{owner.day}}</span>
+    <span>{{owner.status}}</span>
+    <button mat-flat-button style="background-color: #9DDC27  ;font-size: 12px;height: 25px;" routerLink="/ownerdetail" (click)="goToDetail(owner)">ดูรายละเอียด</button>
+  </div>
 </div>
