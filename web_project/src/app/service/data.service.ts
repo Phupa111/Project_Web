@@ -1,6 +1,8 @@
 export class DataService{
   apiEndpoint = 'http://localhost/WebApiGit';
   detail = new detail();
+  foodDetail = new foodDetail();
+  foodsD=Array();
   constructor()
   {}
 }
@@ -12,4 +14,8 @@ class detail{
   status:     string='';
   totalPrice: number=0;
   day:        string='';
+}
+
+class foodDetail{
+  food:   string='';
 }
