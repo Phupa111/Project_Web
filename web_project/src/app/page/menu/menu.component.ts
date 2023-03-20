@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 import { Convert as foodCVt,Food } from 'src/app/model/food.model';
 import { Convert as foodTypeCVt,Foodtype } from 'src/app/model/foodtype.model';
+import { MatDialog } from '@angular/material/dialog';
+import { MenuAddComponent } from '../menu-add/menu-add.component';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -11,7 +13,7 @@ import { Convert as foodTypeCVt,Foodtype } from 'src/app/model/foodtype.model';
 export class MenuComponent {
   foods = Array<Food>();
   foodtypes = Array<Foodtype>();
-constructor(private dataService : DataService,private http : HttpClient){
+constructor(private dataService : DataService,private http : HttpClient,private dialog:MatDialog){
 http.get(dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
   this.foods = foodCVt.toFood(JSON.stringify(data));
   console.log(this.foods);
@@ -33,5 +35,11 @@ findAll(){
     this.foods = foodCVt.toFood(JSON.stringify(data));
 });
 }
+showAdd(foodName:string){
+
+  this.dataService.foodDetail.food = foodName;
+  this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
+}
+
 }
 

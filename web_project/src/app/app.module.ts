@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { OwnerComponent } from './page/owner/owner.component';
 import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import {MatTableModule} from '@angular/material/table';
     FootterComponent,
     MenuComponent,
     OwnerComponent,
-    OwnerdetailComponent
+    OwnerdetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,10 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatDialogModule,
+    CommonModule
   ],
   providers: [
     DataService
