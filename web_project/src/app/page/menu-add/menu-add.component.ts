@@ -16,6 +16,7 @@ export class MenuAddComponent {
     this.foodName = data.foodDetail.food;
     console.log(this.foodName);
 
+    console.log(this.num);
     http.get(this.data.apiEndpoint + "/foods/name/"+this.foodName).subscribe((data :any)=>{
     this.foods = foodCVt.toFood(JSON.stringify(data));
     console.log(this.foods);
@@ -28,14 +29,17 @@ export class MenuAddComponent {
 
     this.num=this.num+1;
 
+
   }
   minus()
   {
     if(this.num >0){
       this.num=this.num-1;
+
     }
 
   }
+
 
 
 

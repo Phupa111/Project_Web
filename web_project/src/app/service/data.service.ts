@@ -3,6 +3,7 @@ export class DataService{
   detail = new detail();
   foodDetail = new foodDetail();
   foodsD=Array();
+
   constructor()
   {}
 }
