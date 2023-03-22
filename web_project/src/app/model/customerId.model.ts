@@ -5,7 +5,11 @@
 //   const customerID = Convert.toCustomerID(json);
 
 export interface CustomerID {
-  cid: number;
+  cid:     number;
+  name:    string;
+  money:   number;
+  address: string;
+  phone:   number;
 }
 
 // Converts JSON strings to/from your types
