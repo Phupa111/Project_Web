@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './page/login/login.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CommonModule } from '@angular/common';
     MenuComponent,
     OwnerComponent,
     OwnerdetailComponent,
+    LoginComponent,
 
   ],
   imports: [
