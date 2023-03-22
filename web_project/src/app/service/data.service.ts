@@ -3,8 +3,7 @@ export class DataService{
   detail = new detail();
   foodDetail = new foodDetail();
   foodsD=Array();
-  cusDataLogin = Array();
-
+  cusDataLogin = Array<dataCusLogin>();
   constructor()
   {}
 }
@@ -22,10 +21,16 @@ class foodDetail{
   food:   string='';
 }
 
-// class dataCusLogin{
-//   cid:     number=0;
-//   name:    string='';
-//   money:   number=0;
-//   address: string='';
-//   phone:   number=0;
-// }
+class dataCusLogin{
+  cid:     number=0;
+  name:    string='';
+  money:   number=0;
+  address: string='';
+  phone:   number=0;
+}
+
+//   cid:     number;
+//   name:    string;
+//   money:   number;
+//   address: string;
+//   phone:   number;

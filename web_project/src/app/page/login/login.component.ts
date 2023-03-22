@@ -11,6 +11,7 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
 
   }
@@ -26,6 +27,8 @@ export class LoginComponent {
       if(response.body == 'login Success'){
         this.http.get(this.dataService.apiEndpoint + '/getCusid/' +username).subscribe((data : any)=>{
           this.dataService.cusDataLogin = customerIdCvt.toCustomerID(JSON.stringify(data));
+          console.log(this.dataService.cusDataLogin);
+          // this.dataService.cusDataLogin = this.dataLogin;
         });
         this.route.navigateByUrl('/menu');
       }else{

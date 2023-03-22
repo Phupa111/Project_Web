@@ -22,7 +22,7 @@ http.get(dataService.apiEndpoint + "/foodtype").subscribe((data :any)=>{
   this.foodtypes = foodTypeCVt.toFoodtype(JSON.stringify(data));
   // console.log(this.foods);
 });
-console.log(this.dataService.cusDataLogin);
+
 }
 findByFoodtype(type:string){
   this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
@@ -37,7 +37,6 @@ findAll(){
 });
 }
 showAdd(foodName:string){
-
   this.dataService.foodDetail.food = foodName;
   this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
 }
