@@ -19,6 +19,5 @@ export class OwnerComponent {
 
   goToDetail(owner:any){
     this.dataService.detail = owner;
-
   }
 }

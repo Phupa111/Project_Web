@@ -17,6 +17,13 @@ import { FormsModule } from '@angular/forms';
 import { OwnerComponent } from './page/owner/owner.component';
 import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
 import {MatTableModule} from '@angular/material/table';
+<<<<<<< Updated upstream
+=======
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './page/login/login.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -26,7 +33,13 @@ import {MatTableModule} from '@angular/material/table';
     FootterComponent,
     MenuComponent,
     OwnerComponent,
+<<<<<<< Updated upstream
     OwnerdetailComponent
+=======
+    OwnerdetailComponent,
+    LoginComponent,
+
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
