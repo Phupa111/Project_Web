@@ -16,17 +16,18 @@ export class MenuComponent {
 constructor(private dataService : DataService,private http : HttpClient,private dialog:MatDialog){
 http.get(dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
   this.foods = foodCVt.toFood(JSON.stringify(data));
-  console.log(this.foods);
+  // console.log(this.foods);
 });
 http.get(dataService.apiEndpoint + "/foodtype").subscribe((data :any)=>{
   this.foodtypes = foodTypeCVt.toFoodtype(JSON.stringify(data));
-  console.log(this.foods);
+  // console.log(this.foods);
 });
+console.log(this.dataService.cusDataLogin);
 }
 findByFoodtype(type:string){
   this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
     this.foods = foodCVt.toFood(JSON.stringify(data));
-    console.log(this.foods);
+    // console.log(this.foods);
   });
 
 }

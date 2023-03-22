@@ -11,7 +11,6 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  f : any;
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
 
   }
@@ -23,10 +22,10 @@ export class LoginComponent {
     let jsonString = JSON.stringify(jsonObj)
     this.http.post(this.dataService.apiEndpoint + '/custommer/login' , jsonString,{observe : 'response'}).subscribe((response)=>{
       // console.log(response.status);
-      console.log(response.body);
+      // console.log(response.body);
       if(response.body == 'login Success'){
         this.http.get(this.dataService.apiEndpoint + '/getCusid/' +username).subscribe((data : any)=>{
-          this.dataService.c = customerIdCvt.toCustomerID(JSON.stringify(data));
+          this.dataService.cusDataLogin = customerIdCvt.toCustomerID(JSON.stringify(data));
         });
         this.route.navigateByUrl('/menu');
       }else{
