@@ -33,7 +33,6 @@ import { LoginComponent } from './componet/login/login.component';
     OwnerdetailComponent,
     LoginComponent,
 
-
   ],
   imports: [
     BrowserModule,
