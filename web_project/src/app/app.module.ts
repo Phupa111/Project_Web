@@ -20,7 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './page/login/login.component';
+import { LoginComponent } from './componet/login/login.component';
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import { LoginComponent } from './page/login/login.component';
     OwnerComponent,
     OwnerdetailComponent,
     LoginComponent,
+
 
   ],
   imports: [

@@ -12,6 +12,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class LoginComponent {
 
+  dalog = Array<CustomerID>();
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
 
   }
@@ -26,9 +27,9 @@ export class LoginComponent {
       // console.log(response.body);
       if(response.body == 'login Success'){
         this.http.get(this.dataService.apiEndpoint + '/getCusid/' +username).subscribe((data : any)=>{
-          this.dataService.cusDataLogin = customerIdCvt.toCustomerID(JSON.stringify(data));
+          this.dalog = customerIdCvt.toCustomerID(JSON.stringify(data));
+          this.dataService.cusDataLogin = this.dalog[0];
           console.log(this.dataService.cusDataLogin);
-          // this.dataService.cusDataLogin = this.dataLogin;
         });
         this.route.navigateByUrl('/menu');
       }else{

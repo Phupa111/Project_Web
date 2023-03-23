@@ -11,13 +11,14 @@
       <span>&nbsp;คาปิบาลาบ</span>
     </div>
 
-    <div>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/owner">Owner</button>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="">HOME</button>
+      <div >
+        <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/owner">Owner</button>
+        <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="">HOME</button>
+        <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" (click)="showdata()">About AS</button>
+        <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" >log out</button>
+      </div>
 
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;">Login</button>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;">About AS</button>
-    </div>
+
 
 </mat-toolbar>
-
+<app-login></app-login>

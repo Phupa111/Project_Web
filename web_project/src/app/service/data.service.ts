@@ -3,9 +3,8 @@ export class DataService{
   detail = new detail();
   foodDetail = new foodDetail();
   foodsD=Array();
-  cusDataLogin = Array<dataCusLogin>();
-  constructor()
-  {}
+  cusDataLogin = new dataCusLogin();
+  constructor(){}
 }
 
 class detail{
