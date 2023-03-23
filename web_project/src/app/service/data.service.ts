@@ -3,10 +3,13 @@ export class DataService{
   detail = new detail();
   foodDetail = new foodDetail();
   foodsD=Array();
-  c = Array();
-
+  customer = Array();
+  CusID = new CusID();
+  getBid = new getBid();
   constructor()
-  {}
+  {
+    console.log("Menu cid",this.CusID.cid);
+  }
 }
 
 class detail{
@@ -20,4 +23,11 @@ class detail{
 
 class foodDetail{
   food:   string='';
+}
+
+class CusID{
+  cid: number=0;
+}
+class getBid{
+  bid : number=0;
 }

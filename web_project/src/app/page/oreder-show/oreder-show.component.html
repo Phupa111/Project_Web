@@ -1,0 +1,55 @@
+<div class="container" style="margin-top: 20px;font-family: 'Athiti', sans-serif;">
+  <div style="display: flex;justify-content: center;margin-top: 20px;font-size: 30px;color: black;font-weight: bold;">
+    <span>รายการในตะกร้า</span>
+  </div>
+  <!-- <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" *ngFor="let showDetailOrder of this.dt">
+    <span style="margin-top: 20px;">ผู้สั่ง: {{showDetailOrder.name}}</span>
+    <span style="margin-top: 20px;">สถานะการจัดส่ง: {{showDetailOrder.status}} </span>
+    <span style="margin-top: 20px;">ราคารวม: {{showDetailOrder.totalPrice}}</span>
+    <span style="margin-top: 20px;">วัน: {{showDetailOrder.day}}</span>
+  </div> -->
+  <div style="display: flex;justify-content: center;color: black;margin-top: 20px">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ชื่อ</th>
+          <th scope="col-4">จำนวน</th>
+          <th scope="col">ราคา</th>
+          <th scope="col">ราคารวม</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of this.carts">
+          <td >{{cart.name}}</td>
+          <td ><div style="display: flex;flex-direction: row;justify-content: center; ">
+            <div style="margin-right: 15px; ">
+              <a class="btn" style="color: white;  background-color: rgb(160, 127, 17);" (click)="phus(cart.blid,cart.fid,cart.amount)" routerLink="/OrderShow">+</a>
+            </div>
+            <div>
+              <h1 style="color: rgb(160, 127, 17); ">{{cart.amount}}</h1>
+            </div>
+            <div style="margin-left: 15px;">
+              <a class="btn" style="color: white; background-color: rgb(160, 127, 17);"  (click)="minus(cart.blid,cart.fid,cart.amount)" routerLink="/OrderShow">-</a>
+            </div>
+          </div></td>
+          <td >{{cart.price}}</td>
+          <td>{{cart.price*cart.amount}}</td>
+          <td><button mat-raised-button style="color: white; background-color: brown;" (click)="deleteList(this.cart.blid,cart.fid)" >ลบ</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display: flex;flex-direction: row; ">
+    <button mat-raised-button color="primary" style="margin-left: 10px;height: 30px;" routerLink="/menu" >
+      Back
+    </button>
+
+  <div style="flex-direction: row; justify-content: left; margin-left: 71%; ">
+    <h1 style="color: black; ">Total: {{this.sum}}</h1>
+  </div>
+  </div>
+
+
+
+

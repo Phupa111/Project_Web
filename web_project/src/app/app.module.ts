@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './componet/header/header.component';
 import { FootterComponent } from './componet/footter/footter.component';
-import {MatIconModule} from '@angular/material/icon';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
@@ -21,6 +21,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './page/login/login.component';
+import {MatIconModule} from '@angular/material/icon';
+import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
+
 
 
 @NgModule({
@@ -32,6 +35,7 @@ import { LoginComponent } from './page/login/login.component';
     OwnerComponent,
     OwnerdetailComponent,
     LoginComponent,
+    OrederShowComponent,
 
   ],
   imports: [

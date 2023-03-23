@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OrederShowComponent } from 'src/app/page/oreder-show/oreder-show.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
 
 }
