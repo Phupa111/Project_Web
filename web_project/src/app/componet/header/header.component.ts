@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { OrederShowComponent } from 'src/app/page/oreder-show/oreder-show.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/data.service';
+
 
 @Component({
   selector: 'app-header',
@@ -8,6 +11,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  dataLogin :any;
+  constructor(private dataService : DataService,private route : Router){
+    // this.ck = 1;
+    // this.dataLogin = this.dataService.cusDataLogin;
+    // console.log(this.dataService.cusDataLogin);
+  }
 
-
+  show(){
+    console.log(this.dataLogin);
+  }
 }

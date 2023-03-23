@@ -6,9 +6,10 @@ export class DataService{
   customer = Array();
   CusID = new CusID();
   getBid = new getBid();
+  cusDataLogin = new dataCusLogin();
   constructor()
   {
-    console.log("Menu cid",this.CusID.cid);
+
   }
 }
 
@@ -24,7 +25,13 @@ class detail{
 class foodDetail{
   food:   string='';
 }
-
+class dataCusLogin{
+  cid:     number=0;
+  name:    string='';
+  money:   number=0;
+  address: string='';
+  phone:   number=0;
+}
 class CusID{
   cid: number=0;
 }
