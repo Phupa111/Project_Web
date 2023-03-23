@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Convert as customerIdCvt,CustomerID } from 'src/app/model/customerId.model';
 import { DataService } from 'src/app/service/data.service';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent {
 
   dalog = Array<CustomerID>();
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
-
+    // console.log(this.dataService.cusDataLogin);
   }
   login(username : string,password : string){
     let jsonObj = {
@@ -30,13 +31,12 @@ export class LoginComponent {
           this.dalog = customerIdCvt.toCustomerID(JSON.stringify(data));
           this.dataService.cusDataLogin = this.dalog[0];
           console.log(this.dataService.cusDataLogin);
+          this.route.navigateByUrl('/menu');
         });
-        this.route.navigateByUrl('/menu');
       }else{
         console.log('no');
       }
     });
-    // this.route.navigateByUrl('/menu');
   }
 
   hash(username : string,password : string){

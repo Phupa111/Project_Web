@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -7,22 +8,14 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
   dataLogin :any;
-  constructor(private dataService : DataService){
-
+  constructor(private dataService : DataService,private route : Router){
+    // this.ck = 1;
+    // this.dataLogin = this.dataService.cusDataLogin;
+    // console.log(this.dataService.cusDataLogin);
   }
 
-  showdata(){
-    this.dataLogin = this.dataService.cusDataLogin;
+  show(){
     console.log(this.dataLogin);
   }
 }
-
-// class dataCusLogin{
-//   cid:     number=0;
-//   name:    string='';
-//   money:   number=0;
-//   address: string='';
-//   phone:   number=0;
-// }

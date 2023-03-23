@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './componet/login/login.component';
 import { MenuComponent } from './page/menu/menu.component';
 import { OwnerComponent } from './page/owner/owner.component';
 import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
 const routes: Routes = [
+  {path : '',component:MenuComponent},
   {path : 'owner',component:OwnerComponent},
   {path : 'menu',component:MenuComponent},
   {path : 'ownerdetail',component:OwnerdetailComponent},
+  {path : 'login', component:LoginComponent}
+
 ];
 
 @NgModule({
