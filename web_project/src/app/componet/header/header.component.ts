@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { OrederShowComponent } from 'src/app/page/oreder-show/oreder-show.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
+
 
 @Component({
   selector: 'app-header',

@@ -21,13 +21,13 @@ export class OwnerdetailComponent {
     this.Detail = dataService.detail;
     http.get(dataService.apiEndpoint + '/orderDetail/' + this.Detail.bid).subscribe((data : any)=>{
       this.ownerdetails=ownerdetailCvt.toOwnerDetail(JSON.stringify(data));
-      console.log(this.ownerdetails);
+
     })
     // console.log(this.Detail);
 
     http.get(dataService.apiEndpoint + '/nameCustomer/'+this.Detail.bid).subscribe((data : any)=>{
       this.dt = nameOrderCvt.toNameOrder(JSON.stringify(data));
-      console.log(this.dt);
+
     });
   }
   back(){

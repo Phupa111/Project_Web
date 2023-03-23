@@ -4,17 +4,26 @@
                     flex-direction: row;
                     justify-content: space-between;
                     background-color: rgb(160, 127, 17);
-                    color: ghostwhite;">
+                    color: ghostwhite;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1;
+                   ">
 
     <div class="fxLayout" style="flex-direction: row; align-items: center;">
       <img src="https://cdn-icons-png.flaticon.com/512/311/311523.png" alt="" width="5%">
       <span>&nbsp;คาปิบาลาบ</span>
     </div>
 
-    <div>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/owner">Owner</button>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/menu">HOME</button>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" (click)="show()">About AS</button>
-      <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;"  routerLink="/login">log In</button>
+    <div style="display: flex; justify-content: flex-end; margin-left: 60%;">
+      <span><button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/owner">Owner</button></span>
+      <span><button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="">HOME</button></span>
+      <span><button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite;" routerLink="/login">Login</button></span>
+      <span>
+        <button mat-flat-button style="background-color: rgb(160, 127, 17); color: ghostwhite; width: 5%;" routerLink="/OrderShow" >
+          <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="" width="100%">
+
+        </button>
+      </span>
     </div>
 </mat-toolbar>

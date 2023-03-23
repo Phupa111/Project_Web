@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Convert as customerIdCvt,CustomerID } from 'src/app/model/customerId.model';
 import { DataService } from 'src/app/service/data.service';
-import { HeaderComponent } from '../header/header.component';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,9 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  dalog = Array<CustomerID>();
+  f : any;
+  cid: any;
+  cusID= Array<CustomerID>();
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
 
   }
@@ -26,12 +28,16 @@ export class LoginComponent {
       console.log(response.body);
       if(response.body == 'login Success'){
         this.http.get(this.dataService.apiEndpoint + '/getCusid/' +username).subscribe((data : any)=>{
-          this.dalog = customerIdCvt.toCustomerID(JSON.stringify(data));
-          this.dataService.cusDataLogin = this.dalog[0];
-          console.log(this.dataService.cusDataLogin);
-          this.route.navigateByUrl('/menu');
+         this.cusID= this.dataService.customer = customerIdCvt.toCustomerID(JSON.stringify(data));
+
+         console.log("CusID",this.cusID[0].cid);
+         this.addBill(this.cusID[0].cid);
+         this.setCid(this.cusID[0].cid);
+
         });
 
+
+        this.route.navigateByUrl('/menu');
       }else{
         console.log('no');
       }
@@ -51,5 +57,22 @@ export class LoginComponent {
       // console.log(response.status);
       // console.log(response.body);
     });
+  }
+
+  addBill(cid:number)
+  {
+    let jsonObj = {
+      cid :cid
+    }
+    let jsonString = JSON.stringify(jsonObj);
+    this.http.post(this.dataService.apiEndpoint + '/bill/insert' , jsonString,{observe : 'response'}).subscribe((response)=>{
+      // console.log(response.status);
+      // console.log(response.body);
+    });
+  }
+
+  setCid(cid:number)
+  {
+    this.dataService.CusID.cid = cid;
   }
 }
