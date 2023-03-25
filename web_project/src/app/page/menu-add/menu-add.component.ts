@@ -17,6 +17,7 @@ export class MenuAddComponent {
   cus:any;
   bills = Array<Bill>();
   length:any;
+  billId:number=0;
 
   constructor(private data:DataService,private http : HttpClient,private dialogRef:MatDialogRef<MenuAddComponent>,private router :Router)
   {
@@ -31,14 +32,15 @@ export class MenuAddComponent {
     console.log(this.foods);
     });
 
-    this.http.get(this.data.apiEndpoint + "/bill/"+data.cusDataLogin.cid).subscribe((data :any)=>{
-      this.bills = bilCVT.toBill(JSON.stringify(data));
-     this.length = this.bills.length;
-     console.log(this.bills[this.length-1]);
-    console.log(this.bills.length);
+    this.billId = data.getBid.bid;
+    // this.http.get(this.data.apiEndpoint + "/bill/"+data.cusDataLogin.cid).subscribe((data :any)=>{
+    //   this.bills = bilCVT.toBill(JSON.stringify(data));
+    //  this.length = this.bills.length;
+    //  console.log(this.bills[this.length-1]);
+    // console.log(this.bills.length);
 
 
-    });
+    // });
 
 
 

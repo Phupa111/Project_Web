@@ -64,6 +64,7 @@ export class LoginComponent {
      this.length = this.bills.length;
     console.log(this.length-1);
     console.log(this.bills);
+    this.setBid(this.bills[this.length-1].bid);
     if( this.bills[this.length-1].status != "ยังไม่ชำระเงิน" && this.bills[this.length-1].cid == cid)
     {
       this.insertBill(cid);
@@ -86,5 +87,10 @@ export class LoginComponent {
       // console.log(response.body);
     })
   }
+  setBid(bid:number)
+{
+  this.dataService.getBid.bid =bid;
+  console.log(bid);
+}
 
 }
