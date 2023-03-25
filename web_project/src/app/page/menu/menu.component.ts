@@ -30,13 +30,6 @@ export class MenuComponent {
 
     this.dataLogin = this.dataService.cusDataLogin;
     // console.log(this.dataLogin);
-    this.http.get(this.dataService.apiEndpoint + "/bill/"+dataService.cusDataLogin.cid).subscribe((data :any)=>{
-      this.bills = bilCVT.toBill(JSON.stringify(data));
-     this.length = this.bills.length;
-
-    this.setBid(this.bills[this.length-1].bid);
-
-    });
 
 }
 findByFoodtype(type:string){
@@ -63,10 +56,6 @@ logOut(){
   this.route.navigateByUrl('/login');
 }
 
-setBid(bid:number)
-{
-  this.dataService.getBid.bid =bid;
-  console.log(bid);
-}
+
 }
 
