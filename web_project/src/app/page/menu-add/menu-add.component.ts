@@ -31,10 +31,12 @@ export class MenuAddComponent {
     console.log(this.foods);
     });
 
-    this.http.get(this.data.apiEndpoint + "/bill").subscribe((data :any)=>{
+    this.http.get(this.data.apiEndpoint + "/bill/"+data.cusDataLogin.cid).subscribe((data :any)=>{
       this.bills = bilCVT.toBill(JSON.stringify(data));
      this.length = this.bills.length;
+     console.log(this.bills[this.length-1]);
     console.log(this.bills.length);
+
 
     });
 
@@ -68,19 +70,17 @@ export class MenuAddComponent {
       amount: amount
     };
 
+
     this.http.post(this.data.apiEndpoint + '/orderItem/insert', jsonObj).subscribe(response => {
 
     });
-    this.setBid(bid);
+
     this.close();
 
 
   }
     }
-  setBid(bid:number)
-  {
-    this.data.getBid.bid =bid;
-  }
+
   close()
   {
     this.dialogRef.close();
