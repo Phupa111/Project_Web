@@ -40,15 +40,19 @@
       </tbody>
     </table>
   </div>
+  <div style="flex-direction: row; justify-content: left; margin-left: 61%; ">
+    <h1 style="color: black; ">Total: {{this.sum}}</h1>
+  </div>
   <div style="display: flex;flex-direction: row; ">
     <button mat-raised-button color="primary" style="margin-left: 10px;height: 30px;" routerLink="/menu" >
       Back
     </button>
 
-  <div style="flex-direction: row; justify-content: left; margin-left: 71%; ">
-    <h1 style="color: black; ">Total: {{this.sum}}</h1>
+    <button mat-raised-button style="margin-left: 75%;height: 30px; background-color: forestgreen; color: white;" (click)="ConfirmBill(this.sum)" routerLink="/menu" >
+    ยืนยัน
+    </button>
   </div>
-  </div>
+
 
 
 

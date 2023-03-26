@@ -7,6 +7,7 @@ export class DataService{
   CusID = new CusID();
   getBid = new getBid();
   cusDataLogin = new dataCusLogin();
+
   constructor()
   {
 
@@ -31,10 +32,16 @@ class dataCusLogin{
   money:   number=0;
   address: string='';
   phone:   number=0;
+
 }
 class CusID{
   cid: number=0;
 }
 class getBid{
-  bid : number=0;
+  bid:        number=0;
+  cid:        number=0;
+  dateDay:    string='';
+  status:     string='';
+  totalPrice: number=0;
 }
+

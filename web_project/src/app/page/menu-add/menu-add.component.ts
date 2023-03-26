@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 import { Convert as foodCVt,Food } from 'src/app/model/food.model';
-import { Convert as bilCVT,Bill } from 'src/app/model/bill.model';
+
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 @Component({
@@ -15,7 +15,7 @@ export class MenuAddComponent {
   foods = Array<Food>();
   num:number=0;
   cus:any;
-  bills = Array<Bill>();
+
   length:any;
   billId:number=0;
 

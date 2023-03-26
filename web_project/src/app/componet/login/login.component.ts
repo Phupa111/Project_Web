@@ -31,7 +31,7 @@ export class LoginComponent {
         this.http.get(this.dataService.apiEndpoint + '/getCusid/' +username).subscribe((data : any)=>{
           this.dalog = customerIdCvt.toCustomerID(JSON.stringify(data));
           this.dataService.cusDataLogin = this.dalog[0];
-          console.log(this.dataService.cusDataLogin.cid);
+          console.log(this.dataService.cusDataLogin);
           this.addBill(this.dataService.cusDataLogin.cid);
           this.route.navigateByUrl('/menu');
         });
@@ -61,6 +61,7 @@ export class LoginComponent {
   {
     this.http.get(this.dataService.apiEndpoint + "/bill/"+cid).subscribe((data :any)=>{
       this.bills = bilCVT.toBill(JSON.stringify(data));
+
      this.length = this.bills.length;
     console.log(this.length-1);
     console.log(this.bills);
