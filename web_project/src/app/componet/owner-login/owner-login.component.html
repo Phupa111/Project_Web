@@ -1,7 +1,7 @@
-<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%;" *ngIf="dalog.length ==0">
+<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%;" >
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">คาปิบาลาบ</h5>
+      <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">Owner</h5>
         <!-- <span class="center" style="color: black;font-size: 24px;font-weight: bold;">Login</span> -->
         <div class="form-group">
           <label for="username">Username</label>
@@ -12,12 +12,9 @@
           <input type="password" class="form-control" id="password" name="password" required #password>
         </div>
         <div style="display: flex;justify-content: center;margin-top: 15px;">
-          <button type="submit" class="btn btn-primary" (click)="login(username.value,password.value)">Login</button>
+          <button type="submit" class="btn btn-primary" (click)="checkOwner(username.value,password.value)">Login</button>
         </div>
     </div>
   </div>
 
-</div>
-<div style="display: flex;justify-content: center;align-items: center;">
-  <button class="btn btn-danger" style="width: 250px;height: 35px;" routerLink="/ownerlogin">Go to Owner Login</button>
 </div>

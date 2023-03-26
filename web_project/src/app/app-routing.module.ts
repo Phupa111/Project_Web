@@ -6,6 +6,7 @@ import { OwnerComponent } from './page/owner/owner.component';
 import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
 
 import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
+import { OwnerLoginComponent } from './componet/owner-login/owner-login.component';
 
 const routes: Routes = [
   {path : '',component:MenuComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path : 'menu',component:MenuComponent},
   {path : 'ownerdetail',component:OwnerdetailComponent},
   {path : 'OrderShow',component:OrederShowComponent},
-  {path : 'login',component:LoginComponent}
+  {path : 'login',component:LoginComponent},
+  {path : 'ownerlogin',component:OwnerLoginComponent}
 ];
 
 @NgModule({

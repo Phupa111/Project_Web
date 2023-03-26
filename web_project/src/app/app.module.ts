@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './componet/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
+import { OwnerLoginComponent } from './componet/owner-login/owner-login.component';
 
 
 
@@ -36,6 +37,8 @@ import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
     OwnerdetailComponent,
     LoginComponent,
     OrederShowComponent,
+    OwnerLoginComponent,
+
 
   ],
   imports: [
