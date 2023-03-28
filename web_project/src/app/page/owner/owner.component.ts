@@ -10,6 +10,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class OwnerComponent {
   owners = Array<Owner>();
+  statusBill='';
   constructor(private dataService : DataService,private http : HttpClient){
     http.get(dataService.apiEndpoint + '/order').subscribe((data : any)=>{
       this.owners = ownerCvt.toOwner(JSON.stringify(data));
@@ -19,6 +20,17 @@ export class OwnerComponent {
 
   goToDetail(owner:any){
     this.dataService.detail = owner;
+  }
 
+  statusChange(status: any,bid: number) {
+    let jsonObj = {
+      status :status.target.value,
+      bid : bid
+    }
+    let jsonString = JSON.stringify(jsonObj);
+    this.http.post(this.dataService.apiEndpoint + '/update/status' , jsonString,{observe : 'response'}).subscribe((response)=>{
+      // console.log(response.status);
+      // console.log(response.body);
+    })
   }
 }

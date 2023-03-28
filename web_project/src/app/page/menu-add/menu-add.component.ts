@@ -74,7 +74,7 @@ export class MenuAddComponent {
 
 
     this.http.post(this.data.apiEndpoint + '/orderItem/insert', jsonObj).subscribe(response => {
-
+      
     });
 
     this.close();
