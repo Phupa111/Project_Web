@@ -18,6 +18,7 @@ export class OrederShowComponent {
    bills = Array<Bill>();
    length:any;
 
+
   constructor(private dataService : DataService,private http : HttpClient,private route : Router)
   {
 
@@ -107,17 +108,38 @@ ConfirmBill(money:number)
      cid:this.dataService.cusDataLogin.cid
 
   }
+
+
   let jsonString = JSON.stringify(jsonObj);
   this.http.post(this.dataService.apiEndpoint + '/updateMoney' , jsonString,{observe : 'response'}).subscribe((response)=>{
     // console.log(response.status);
     // console.log(response.body);
     this.dataService.cusDataLogin.money -= money;
+    this.updateBill(money);
     this.insertBill(this.dataService.cusDataLogin.cid);
   });
 
   }
 
 }
+
+updateBill(money:number)
+{
+  let jsonObj = {
+    money:money,
+    bid:this.dataService.getBid.bid
+
+ }
+
+
+ let jsonString = JSON.stringify(jsonObj);
+ this.http.post(this.dataService.apiEndpoint + '/updateBillsMoney' , jsonString,{observe : 'response'}).subscribe((response)=>{
+   // console.log(response.status);
+   // console.log(response.body);
+ });
+}
+
+
 
 insertBill(cid:number)
   {
