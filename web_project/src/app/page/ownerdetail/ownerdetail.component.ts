@@ -19,6 +19,7 @@ export class OwnerdetailComponent {
   Detail : any;
   constructor(private dataService : DataService,private http : HttpClient,private route : Router){
     this.Detail = dataService.detail;
+    console.log(this.Detail);
     http.get(dataService.apiEndpoint + '/orderDetail/' + this.Detail.bid).subscribe((data : any)=>{
       this.ownerdetails=ownerdetailCvt.toOwnerDetail(JSON.stringify(data));
 
