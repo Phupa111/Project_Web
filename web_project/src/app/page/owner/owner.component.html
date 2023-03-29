@@ -1,26 +1,26 @@
 <!-- style="display: flex;flex-direction: row;background-color: #EC4E4E ;justify-content: space-around;" -->
 <div class="container-fluid">
-  <div class="barList">
-    <span>หมายเลขบิล</span>
-    <span>ชื่อผู้สั่ง</span>
-    <span>ราคารวม</span>
-    <span>ปี/เดือน/วัน</span>
-    <span>สถานะ</span>
-    <span style="color: #EC4E4E ;">ดูรายละเอียด</span>
+  <div class="row" style="text-align: center;background-color: #EC4E4E ;height: 30px;border-radius: 5px;margin-top: 10px;font-size: 20px;align-items: center;">
+    <span class="col-2">หมายเลขบิล</span>
+    <span class="col-2">ชื่อผู้สั่ง</span>
+    <span class="col-2">ราคารวม</span>
+    <span class="col-2">ปี/เดือน/วัน</span>
+    <span class="col-2">สถานะ</span>
+    <span class="col-2" style="color: #EC4E4E ;">ดูรายละเอียด</span>
   </div>
   <div *ngFor="let owner of this.owners">
-    <div class="detailList" *ngIf="owner.status != 'ยังไม่ชำระเงิน'">
-      <span>{{owner.bid}}</span>
-      <span>{{owner.name}}</span>
-      <span>{{owner.totalPrice}}</span>
-      <span>{{owner.day}}</span>
-      <!-- <span>{{owner.status}}</span> -->
-      <select name="statusBill" style="margin-left: 10px;height: 30px;color: black;" (change)="statusChange($event,owner.bid)">
+    <div class="row" style="align-items: center;height: 25px; border-radius: 5px;margin-top: 10px;color: black;text-align: center;" *ngIf="owner.status != 'ยังไม่ชำระเงิน'">
+      <span class="col-2">{{owner.bid}}</span>
+      <span class="col-2">{{owner.name}}</span>
+      <span class="col-2">{{owner.totalPrice}}</span>
+      <span class="col-2">{{owner.day}}</span>
+      <!-- <span class="col-2">{{owner.status}}</span> -->
+      <select class="col-2" name="statusBill" style="margin-left: 10px;height: 30px;color: black;width: 150px;" (change)="statusChange($event,owner.bid)">
         <option selected>{{owner.status}}</option>
         <option *ngIf="owner.status != 'กำลังจัดส่ง'">กำลังจัดส่ง</option>
         <option *ngIf="owner.status != 'จัดส่งแล้ว'">จัดส่งแล้ว</option>
       </select>
-      <button mat-flat-button style="background-color: #9DDC27  ;font-size: 12px;height: 25px;" routerLink="/ownerdetail" (click)="goToDetail(owner)">ดูรายละเอียด</button>
+      <button class="col-2" mat-flat-button style="background-color: #9DDC27  ;font-size: 12px;height: 25px;width: 150px;margin-left: 20px;" routerLink="/ownerdetail" (click)="goToDetail(owner)">ดูรายละเอียด</button>
     </div>
   </div>
 </div>
