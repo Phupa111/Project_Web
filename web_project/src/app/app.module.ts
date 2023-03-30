@@ -24,6 +24,9 @@ import { LoginComponent } from './componet/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
 import { OwnerLoginComponent } from './componet/owner-login/owner-login.component';
+import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
+import {MatCardModule} from '@angular/material/card';
+import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
 
 
 
@@ -38,8 +41,8 @@ import { OwnerLoginComponent } from './componet/owner-login/owner-login.componen
     LoginComponent,
     OrederShowComponent,
     OwnerLoginComponent,
-
-
+    AllbillcustomerComponent,
+    BillCustomerDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { OwnerLoginComponent } from './componet/owner-login/owner-login.componen
     MatTableModule,
     MatListModule,
     MatDialogModule,
-    CommonModule
+    CommonModule,
+    MatCardModule
   ],
   providers: [
     DataService

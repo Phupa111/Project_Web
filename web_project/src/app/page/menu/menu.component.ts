@@ -32,30 +32,35 @@ export class MenuComponent {
     // console.log(this.dataLogin);
 
 }
-findByFoodtype(type:string){
-  this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
-    this.foods = foodCVt.toFood(JSON.stringify(data));
-    console.log(this.foods);
+  findByFoodtype(type:string){
+    this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
+      this.foods = foodCVt.toFood(JSON.stringify(data));
+      console.log(this.foods);
+    });
+
+  }
+  findAll(){
+    this.http.get(this.dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
+      this.foods = foodCVt.toFood(JSON.stringify(data));
   });
+  }
+  showAdd(foodName:string){
 
-}
-findAll(){
-  this.http.get(this.dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
-    this.foods = foodCVt.toFood(JSON.stringify(data));
-});
-}
-showAdd(foodName:string){
+    this.dataService.foodDetail.food = foodName;
+    this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
+  }
+  logOut(){
+    // this.dataLogin=null;
+    this.dataLogin.cid=0;
+    console.log(this.dataLogin);
+    this.route.navigateByUrl('/login');
+  }
 
-  this.dataService.foodDetail.food = foodName;
-  this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
-}
-logOut(){
-  // this.dataLogin=null;
-  this.dataLogin.cid=0;
-  console.log(this.dataLogin);
-  this.route.navigateByUrl('/login');
-}
-
+  goToAllBillCustomer(cid:any){
+    this.dataService.CusID= cid;
+    console.log(this.dataService.CusID);
+    this.route.navigateByUrl('/allbillcustomer');
+  }
 
 }
 
