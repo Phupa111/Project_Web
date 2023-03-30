@@ -24,7 +24,8 @@ export class AllbillcustomerComponent {
     });
   }
 
-  showDetail(){
-
+  getBid(bid : any){
+    this.dataService.Blid=bid;
+    this.route.navigateByUrl('/billCustomerDetail');
   }
 }

@@ -2,12 +2,12 @@
   <div style="display: flex;justify-content: center;margin-top: 20px;font-size: 30px;color: black;font-weight: bold;">
     <span>รายละเอียดการสั่งอาหาร</span>
   </div>
-  <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" >
-    <span style="margin-top: 20px;">ผู้สั่ง: </span>
-    <span style="margin-top: 20px;">หมายเลขบิล: </span>
-    <span style="margin-top: 20px;">สถานะการจัดส่ง: </span>
-    <span style="margin-top: 20px;">ราคารวม: </span>
-    <span style="margin-top: 20px;">วัน: </span>
+  <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" *ngFor="let bill of this.detailCusBill">
+    <span style="margin-top: 20px;">ผู้สั่ง: {{bill.name}}</span>
+    <span style="margin-top: 20px;">หมายเลขบิล: {{bill.bid}}</span>
+    <span style="margin-top: 20px;">สถานะการจัดส่ง: {{bill.status}}</span>
+    <span style="margin-top: 20px;">ราคารวม: {{bill.totalPrice}}</span>
+    <span style="margin-top: 20px;">วัน: {{bill.dateDay}}</span>
   </div>
   <div style="display: flex;justify-content: center;color: black;margin-top: 20px">
     <table class="table">
@@ -19,16 +19,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td ></td>
-          <td ></td>
-          <td ></td>
+        <tr *ngFor="let foodDT of this.detailFood">
+          <td >{{foodDT.name}}</td>
+          <td >{{foodDT.price}}</td>
+          <td >{{foodDT.amount}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div>
-    <button mat-raised-button color="primary" style="margin-left: 10px;height: 30px;" routerLink="..">
+    <button mat-raised-button color="primary" style="margin-left: 10px;height: 30px;" routerLink="/allbillcustomer">
       Back
     </button>
   </div>
