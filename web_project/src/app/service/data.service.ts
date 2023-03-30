@@ -7,11 +7,9 @@ export class DataService{
   CusID = new CusID();
   getBid = new getBid();
   cusDataLogin = new dataCusLogin();
+  Blid = new Blid();
 
-  constructor()
-  {
-
-  }
+  constructor(){}
 }
 
 class detail{
@@ -43,5 +41,9 @@ class getBid{
   dateDay:    string='';
   status:     string='';
   totalPrice: number=0;
+}
+
+class Blid{
+  bid : number =0;
 }
 

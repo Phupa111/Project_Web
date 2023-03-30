@@ -23,7 +23,7 @@ export class OwnerdetailComponent {
     http.get(dataService.apiEndpoint + '/orderDetail/' + this.Detail.bid).subscribe((data : any)=>{
       this.ownerdetails=ownerdetailCvt.toOwnerDetail(JSON.stringify(data));
 
-    })
+    });
     // console.log(this.Detail);
 
     http.get(dataService.apiEndpoint + '/nameCustomer/'+this.Detail.bid).subscribe((data : any)=>{
