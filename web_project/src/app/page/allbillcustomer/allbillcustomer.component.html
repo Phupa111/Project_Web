@@ -4,15 +4,16 @@
   Back
 </button>
 <div class="container-fluid">
-  <div class="row" style="text-align: center;background-color: #EC4E4E ;height: 30px;border-radius: 5px;margin-top: 10px;font-size: 20px;align-items: center;">
+  <div class="row" style="text-align: center;background-color: #EC4E4E ;height: 30px;border-radius: 5px;margin-top: 10px;font-size: 20px;align-items: center;" >
     <span class="col-2">หมายเลขบิล</span>
     <span class="col-2">ราคารวม</span>
     <span class="col-4">ปี/เดือน/วัน</span>
     <span class="col-2">สถานะ</span>
     <span class="col-2" style="color: #EC4E4E ;">ดูรายละเอียด</span>
   </div>
-  <div class="card"  style="margin-top: 5px;" *ngFor="let list of this.listBillCustomer">
-    <div class="card-body">
+  <div *ngFor="let list of this.listBillCustomer" >
+  <div class="card"  style="margin-top: 5px;" *ngIf="list.status != 'ยังไม่ชำระเงิน'">
+    <div class="card-body" >
       <div class="row" style="align-items: center;height: 25px; border-radius: 5px;color: black;text-align: center;font-size: 15px;font-weight: bold;" >
         <span class="col-2">{{list.bid}}</span>
         <span class="col-2">{{list.totalPrice}}</span>
@@ -22,4 +23,6 @@
       </div>
     </div>
   </div>
+  </div>
+
 </div>
