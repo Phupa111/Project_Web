@@ -58,18 +58,23 @@ export class OrederShowComponent {
   minus(bid:number,fid:number,amount:number)
   {
 
-
+   if(amount >1)
+   {
     this.http.get(this.dataService.apiEndpoint + "/orederItem/minus/"+bid+"/"+fid).subscribe((data :any)=>{
       this.sum = 0;
 
       this.carts.forEach(food=>{
         if(food.fid == fid){
 
-          food.amount=food.amount-1;
+            food.amount=food.amount-1;
+
+
         }
        });
        this.sumCartItem();
   });
+   }
+
 
 }
 deleteList(bid:number,fid:number)
