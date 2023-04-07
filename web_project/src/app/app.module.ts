@@ -27,6 +27,9 @@ import { OwnerLoginComponent } from './componet/owner-login/owner-login.componen
 import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
 import {MatCardModule} from '@angular/material/card';
 import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
+import { RegisterComponent } from './page/register/register.component';
+import { OwnerShowCusComponent } from './page/owner-show-cus/owner-show-cus.component';
+import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-detaill/show-customer-data-detaill.component';
 
 
 
@@ -43,6 +46,9 @@ import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-cu
     OwnerLoginComponent,
     AllbillcustomerComponent,
     BillCustomerDetailComponent,
+    RegisterComponent,
+    OwnerShowCusComponent,
+    ShowCustomerDataDetaillComponent,
   ],
   imports: [
     BrowserModule,

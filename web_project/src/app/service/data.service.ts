@@ -8,6 +8,8 @@ export class DataService{
   getBid = new getBid();
   cusDataLogin = new dataCusLogin();
   Blid = new Blid();
+  ownerSeeCid = new ownerSeeCid();
+  checkOwnerLogin = new checkOwnerLogin();
 
   constructor(){}
 }
@@ -47,3 +49,10 @@ class Blid{
   bid : number =0;
 }
 
+class ownerSeeCid{
+  cid : number =0;
+}
+
+class checkOwnerLogin{
+  isLogin : boolean =false;
+}
