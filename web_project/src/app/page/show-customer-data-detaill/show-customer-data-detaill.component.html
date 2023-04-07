@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 20px;font-family: 'Athiti', sans-serif;">
+  <div style="display: flex;justify-content: center;margin-top: 20px;font-size: 30px;color: black;font-weight: bold;">
+    <span>ข้อมูลผู้ใช้</span>
+  </div>
+  <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" *ngFor="let dataCustomer of this.customerDataDetail">
+    <span style="margin-top: 20px;">ID: {{dataCustomer.cid}}</span>
+    <span style="margin-top: 20px;">username: {{dataCustomer.username}} </span>
+    <span style="margin-top: 20px;">ที่อยู่: {{dataCustomer.address}}</span>
+    <span style="margin-top: 20px;">หมายเลขโทรศัพท์: {{dataCustomer.phone}}</span>
+    <span style="margin-top: 40px;font-size: 30px;">เงินในบัญชี: {{dataCustomer.money}} บาท</span>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" style="height: 30px;margin-top: 50px;" routerLink="/ownershowcus" >
+      Back
+    </button>
+  </div>
+</div>

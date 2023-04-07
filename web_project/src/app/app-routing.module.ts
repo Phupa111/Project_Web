@@ -9,6 +9,9 @@ import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
 import { OwnerLoginComponent } from './componet/owner-login/owner-login.component';
 import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
 import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
+import { RegisterComponent } from './page/register/register.component';
+import { OwnerShowCusComponent } from './page/owner-show-cus/owner-show-cus.component';
+import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-detaill/show-customer-data-detaill.component';
 
 const routes: Routes = [
   {path : '',component:MenuComponent},
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path : 'login',component:LoginComponent},
   {path : 'ownerlogin',component:OwnerLoginComponent},
   {path : 'allbillcustomer',component:AllbillcustomerComponent},
-  {path : 'billCustomerDetail',component:BillCustomerDetailComponent}
+  {path : 'billCustomerDetail',component:BillCustomerDetailComponent},
+  {path : 'register',component:RegisterComponent},
+  {path : 'ownershowcus',component:OwnerShowCusComponent},
+  {path : 'showcustomerdatadetail',component:ShowCustomerDataDetaillComponent}
 ];
 
 @NgModule({

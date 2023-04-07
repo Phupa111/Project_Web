@@ -1,5 +1,9 @@
 <!-- style="display: flex;flex-direction: row;background-color: #EC4E4E ;justify-content: space-around;" -->
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="this.ownerislogin == true">
+  <div style="display: flex;justify-content: end;margin-top: 10px;">
+    <button mat-flat-button style="background-color: red ;color: azure;margin-left: 10px;" (click)="logout()">Log out</button>
+    <button mat-flat-button style="background-color: #4689FF ;color: azure;" routerLink="/ownershowcus">ดูรายชื่อผู้ใช้</button>
+  </div>
   <div class="row" style="text-align: center;background-color: #EC4E4E ;height: 30px;border-radius: 5px;margin-top: 10px;font-size: 20px;align-items: center;">
     <span class="col-2">หมายเลขบิล</span>
     <span class="col-2">ชื่อผู้สั่ง</span>

@@ -25,6 +25,7 @@ export class OwnerLoginComponent {
       // console.log(response.status);
       console.log(response.body);
       if(response.body == 'login Success'){
+        this.dataService.checkOwnerLogin.isLogin = true;
         this.route.navigateByUrl('/owner');
       }
     });

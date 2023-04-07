@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Convert as ownerCvt,Owner } from 'src/app/model/owner.model';
 import { DataService } from 'src/app/service/data.service';
 
@@ -11,7 +12,9 @@ import { DataService } from 'src/app/service/data.service';
 export class OwnerComponent {
   owners = Array<Owner>();
   statusBill='';
-  constructor(private dataService : DataService,private http : HttpClient){
+  ownerislogin =false;
+  constructor(private dataService : DataService,private http : HttpClient,private route : Router){
+    this.ownerislogin=this.dataService.checkOwnerLogin.isLogin;
     http.get(dataService.apiEndpoint + '/order').subscribe((data : any)=>{
       this.owners = ownerCvt.toOwner(JSON.stringify(data));
       // console.log(this.owners);
@@ -22,6 +25,10 @@ export class OwnerComponent {
     this.dataService.detail = owner;
   }
 
+  logout(){
+    this.dataService.checkOwnerLogin.isLogin= false;
+    this.route.navigateByUrl('/login');
+  }
   statusChange(status: any,bid: number) {
     let jsonObj = {
       status :status.target.value,

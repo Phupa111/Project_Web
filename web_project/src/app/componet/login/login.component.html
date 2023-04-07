@@ -1,6 +1,6 @@
 <div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%;" *ngIf="dalog.length ==0">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" style="color: black;">
       <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">คาปิบาลาบ</h5>
         <!-- <span class="center" style="color: black;font-size: 24px;font-weight: bold;">Login</span> -->
         <div class="form-group">
@@ -14,9 +14,9 @@
         <div style="display: flex;justify-content: center;margin-top: 15px;">
           <button type="submit" class="btn btn-primary" (click)="login(username.value,password.value)">Login</button>
         </div>
+        <a style="color: #81B497;display: flex;justify-content: end;" routerLink="/register">Register</a>
     </div>
   </div>
-
 </div>
 <div style="display: flex;justify-content: center;align-items: center;">
   <button class="btn btn-danger" style="width: 250px;height: 35px;" routerLink="/ownerlogin">Go to Owner Login</button>
