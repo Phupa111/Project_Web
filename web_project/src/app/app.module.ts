@@ -31,6 +31,8 @@ import { AddressComponent } from './page/address/address.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegisterComponent } from './componet/register/register.component';
 import { AddMoneyComponent } from './page/add-money/add-money.component';
+import { OwnnerShowCusComponent } from './page/ownner-show-cus/ownner-show-cus.component';
+import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-detaill/show-customer-data-detaill.component';
 
 
 
@@ -50,6 +52,8 @@ import { AddMoneyComponent } from './page/add-money/add-money.component';
     AddressComponent,
     RegisterComponent,
     AddMoneyComponent,
+    OwnnerShowCusComponent,
+    ShowCustomerDataDetaillComponent,
   ],
   imports: [
     BrowserModule,

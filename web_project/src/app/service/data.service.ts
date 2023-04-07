@@ -14,6 +14,8 @@ export class DataService{
   cusDataLogin = new dataCusLogin();
   Blid = new Blid();
   Money = new Money();
+  ownerSeeCid = new ownerSeeCid();
+   checkOwnerLogin = new checkOwnerLogin();
   constructor(){
 
 
@@ -57,5 +59,12 @@ class Blid{
 class Money
 {
   money : number = 0;
+}
+class ownerSeeCid{
+  cid : number =0;
+}
+
+class checkOwnerLogin{
+  isLogin : boolean =false;
 }
 
