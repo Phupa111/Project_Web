@@ -1,0 +1,16 @@
+<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%; color: black;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">เติมเงิน</h5>
+        <!-- <span class="center" style="color: black;font-size: 24px;font-weight: bold;">Login</span> -->
+        <div class="form-group" >
+          <label for="money" style="color: black;">ใส่จำนวนเงิน</label>
+          <input type="number" class="form-control" id="money" name="money" required #money>
+        </div>
+        <div style="display: flex;justify-content: center;margin-top: 15px;">
+          <button type="submit" class="btn btn-primary"  routerLink="/menu" (click)="AddMoney(+money.value)">ยืนยัน</button>
+        </div>
+    </div>
+  </div>
+
+</div>

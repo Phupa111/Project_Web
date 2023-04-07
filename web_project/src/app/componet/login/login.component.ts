@@ -33,6 +33,8 @@ export class LoginComponent {
           this.dataService.cusDataLogin = this.dalog[0];
           console.log(this.dataService.cusDataLogin);
           this.addBill(this.dataService.cusDataLogin.cid);
+          ;
+
           this.route.navigateByUrl('/menu');
         });
 
@@ -59,7 +61,9 @@ export class LoginComponent {
 
   addBill(cid:number)
   {
-    this.http.get(this.dataService.apiEndpoint + "/bill/"+cid).subscribe((data :any)=>{
+
+
+   this.http.get(this.dataService.apiEndpoint + "/bill/"+cid).subscribe((data :any)=>{
       this.bills = bilCVT.toBill(JSON.stringify(data));
 
      this.length = this.bills.length;
@@ -69,12 +73,15 @@ export class LoginComponent {
     if( this.bills[this.length-1].status != "ยังไม่ชำระเงิน" && this.bills[this.length-1].cid == cid)
     {
       this.insertBill(cid);
-    }
+    }  });
 
 
 
-    });
-    ;
+
+
+
+
+
   }
 
   insertBill(cid:number)

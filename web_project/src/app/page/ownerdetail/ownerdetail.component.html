@@ -5,6 +5,8 @@
   </div>
   <div style="font-size: 20px;color: black;margin-top: 50px;display: flex;flex-direction: column;" *ngFor="let showDetailOrder of this.dt">
     <span style="margin-top: 20px;">ผู้สั่ง: {{showDetailOrder.name}}</span>
+    <span style="margin-top: 20px;">สถานที่จัดส่ง: {{showDetailOrder.Adress}}</span>
+    <span style="margin-top: 20px;">เบอร์โทร: 0{{showDetailOrder.phone}}</span>
     <span style="margin-top: 20px;">สถานะการจัดส่ง: {{showDetailOrder.status}} </span>
     <span style="margin-top: 20px;">ราคารวม: {{showDetailOrder.totalPrice}}</span>
     <span style="margin-top: 20px;">วัน: {{showDetailOrder.day}}</span>

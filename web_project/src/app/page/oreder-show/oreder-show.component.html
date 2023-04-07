@@ -21,8 +21,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let cart of this.carts">
-          <td >{{cart.name}}</td>
-          <td ><div style="display: flex;flex-direction: row;justify-content: center; ">
+          <td class="col">{{cart.name}}</td>
+          <td ><div style="display: flex;flex-direction: row;justify-content: center; " class="col-4">
             <div style="margin-right: 15px; ">
               <a class="btn" style="color: white;  background-color: rgb(160, 127, 17);" (click)="minus(cart.blid,cart.fid,cart.amount)" routerLink="/OrderShow">-</a>
             </div>
@@ -33,9 +33,9 @@
               <a class="btn" style="color: white; background-color: rgb(160, 127, 17);"  (click)="phus(cart.blid,cart.fid,cart.amount)" routerLink="/OrderShow">+</a>
             </div>
           </div></td>
-          <td >{{cart.price}}</td>
-          <td>{{cart.price*cart.amount}}</td>
-          <td><button mat-raised-button style="color: white; background-color: brown;" (click)="deleteList(this.cart.blid,cart.fid)" >ลบ</button></td>
+          <td class="col" >{{cart.price}}</td>
+          <td class="col">{{cart.price*cart.amount}}</td>
+          <td class="col"><button mat-raised-button style="color: white; background-color: brown;" (click)="deleteList(this.cart.blid,cart.fid)" >ลบ</button></td>
         </tr>
       </tbody>
     </table>
@@ -48,7 +48,7 @@
       Back
     </button>
 
-    <button mat-raised-button style="margin-left: 75%;height: 30px; background-color: forestgreen; color: white;" (click)="ConfirmBill(this.sum)" routerLink="/menu" >
+    <button mat-raised-button style="margin-left: 75%;height: 30px; background-color: forestgreen; color: white;" (click)="addAdress(this.sum)" >
     ยืนยัน
     </button>
   </div>

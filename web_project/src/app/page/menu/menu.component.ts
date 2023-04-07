@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MenuAddComponent } from '../menu-add/menu-add.component';
 import { Router } from '@angular/router';
 import { Convert as bilCVT,Bill } from 'src/app/model/bill.model';
+import { AddMoneyComponent } from '../add-money/add-money.component';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -16,7 +17,8 @@ export class MenuComponent {
   foods = Array<Food>();
   foodtypes = Array<Foodtype>();
   dataLogin :any;
-  bills = Array<Bill>();
+  sessionCid = sessionStorage.getItem('session');
+ bills = Array<Bill>();
   length:any;
   constructor(private dataService : DataService,private http : HttpClient,private dialog:MatDialog,private route : Router){
     http.get(dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
@@ -32,35 +34,39 @@ export class MenuComponent {
     // console.log(this.dataLogin);
 
 }
-  findByFoodtype(type:string){
-    this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
-      this.foods = foodCVt.toFood(JSON.stringify(data));
-      console.log(this.foods);
-    });
-
-  }
-  findAll(){
-    this.http.get(this.dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
-      this.foods = foodCVt.toFood(JSON.stringify(data));
+findByFoodtype(type:string){
+  this.http.get(this.dataService.apiEndpoint + "/foods/type/"+type).subscribe((data :any)=>{
+    this.foods = foodCVt.toFood(JSON.stringify(data));
+    console.log(this.foods);
   });
-  }
-  showAdd(foodName:string){
 
-    this.dataService.foodDetail.food = foodName;
-    this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
-  }
-  logOut(){
-    // this.dataLogin=null;
-    this.dataLogin.cid=0;
-    console.log(this.dataLogin);
-    this.route.navigateByUrl('/login');
-  }
+}
+findAll(){
+  this.http.get(this.dataService.apiEndpoint + "/foods").subscribe((data :any)=>{
+    this.foods = foodCVt.toFood(JSON.stringify(data));
+});
+}
+showAdd(foodName:string){
 
-  goToAllBillCustomer(cid:any){
-    this.dataService.CusID= cid;
-    console.log(this.dataService.CusID);
-    this.route.navigateByUrl('/allbillcustomer');
-  }
+  this.dataService.foodDetail.food = foodName;
+  this.dialog.open(MenuAddComponent,{minWidth:'500px',minHeight:'500px'})
+}
+logOut(){
+  // this.dataLogin=null;
+  this.dataLogin.cid=0;
+  console.log(this.dataLogin);
+  this.route.navigateByUrl('/login');
+}
+
+ goToAllBillCustomer(cid:any){
+  this.dataService.CusID= cid;
+  console.log(this.dataService.CusID);
+  this.route.navigateByUrl('/allbillcustomer');
+}
+showAddMoney(){
+
+  this.dialog.open(AddMoneyComponent,{minWidth:'300px',minHeight:'100px'})
+}
 
 }
 

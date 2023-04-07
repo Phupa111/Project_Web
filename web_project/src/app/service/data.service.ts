@@ -1,3 +1,8 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn:'root'
+})
 export class DataService{
   apiEndpoint = 'http://localhost/WebApiGit';
   detail = new detail();
@@ -8,10 +13,13 @@ export class DataService{
   getBid = new getBid();
   cusDataLogin = new dataCusLogin();
   Blid = new Blid();
+ Money = new Money();
+  constructor(){
   ownerSeeCid = new ownerSeeCid();
   checkOwnerLogin = new checkOwnerLogin();
 
-  constructor(){}
+
+  }
 }
 
 class detail{
@@ -47,6 +55,10 @@ class getBid{
 
 class Blid{
   bid : number =0;
+}
+class Money
+{
+  money : number = 0;
 }
 
 class ownerSeeCid{

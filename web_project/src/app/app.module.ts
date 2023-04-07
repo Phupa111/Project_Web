@@ -12,13 +12,13 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MenuComponent } from './page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './service/data.service';
+
 import { FormsModule } from '@angular/forms';
 import { OwnerComponent } from './page/owner/owner.component';
 import { OwnerdetailComponent } from './page/ownerdetail/ownerdetail.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './componet/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,9 +27,16 @@ import { OwnerLoginComponent } from './componet/owner-login/owner-login.componen
 import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
 import {MatCardModule} from '@angular/material/card';
 import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
+
+import { AddressComponent } from './page/address/address.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegisterComponent } from './componet/register/register.component';
+import { AddMoneyComponent } from './page/add-money/add-money.component';
+
 import { RegisterComponent } from './page/register/register.component';
 import { OwnerShowCusComponent } from './page/owner-show-cus/owner-show-cus.component';
 import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-detaill/show-customer-data-detaill.component';
+
 
 
 
@@ -46,9 +53,15 @@ import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-deta
     OwnerLoginComponent,
     AllbillcustomerComponent,
     BillCustomerDetailComponent,
+
+    AddressComponent,
+    RegisterComponent,
+    AddMoneyComponent,
+
     RegisterComponent,
     OwnerShowCusComponent,
     ShowCustomerDataDetaillComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -64,10 +77,15 @@ import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-deta
     MatListModule,
     MatDialogModule,
     CommonModule,
-    MatCardModule
+    MatCardModule,
+
+    MatFormFieldModule,
+
+
+
   ],
   providers: [
-    DataService
+
   ],
   bootstrap: [AppComponent]
 })

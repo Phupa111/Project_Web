@@ -7,6 +7,8 @@
 export interface NameOrder {
   name:       string;
   status:     string;
+  Adress:     string;
+  phone:      string;
   totalPrice: number;
   day:        string;
 }
