@@ -12,10 +12,12 @@
         <span>ชื่อ: {{dataLogin.name}}</span>
         <span>จำนวนเงิน: {{dataLogin.money}}</span>
         <button type="button" class="btn btn-danger" (click)="logOut()">Log out</button>
+        <button type="button" class="btn btn-info" (click)="goToAllBillCustomer(dataLogin.cid)">บิลทั้งหมดของฉัน</button>
+        <button type="button" class="btn "  style=" background-color: rgb(160, 127, 17);" (click)="showAddMoney()" >เติมเงิน</button>
       </div>
     </div>
     <div style="display: flex;justify-content: center;align-items: center;margin-left: 20px;">
-      <button type="button" class="btn btn-info" (click)="goToAllBillCustomer(dataLogin.cid)">บิลทั้งหมดของฉัน</button>
+
     </div>
 </div>
 <div style="text-align: center; margin-top: 1%; margin-bottom: 1%;" >

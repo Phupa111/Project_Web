@@ -11,6 +11,7 @@ import { DataService } from 'src/app/service/data.service';
 export class OwnerComponent {
   owners = Array<Owner>();
   statusBill='';
+  billNum:number=1;
   constructor(private dataService : DataService,private http : HttpClient){
     http.get(dataService.apiEndpoint + '/order').subscribe((data : any)=>{
       this.owners = ownerCvt.toOwner(JSON.stringify(data));

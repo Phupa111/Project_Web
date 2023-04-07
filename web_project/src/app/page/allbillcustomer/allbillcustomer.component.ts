@@ -14,8 +14,9 @@ export class AllbillcustomerComponent {
   listBillCustomer = Array<CustomerBill>();
   constructor(private http : HttpClient,private dataService : DataService,private route : Router){
     let jsonObj = {
-      cid : dataService.CusID
+      cid : dataService.cusDataLogin.cid
     }
+    console.log(dataService.CusID);
     let jsonString = JSON.stringify(jsonObj);
     this.http.post(this.dataService.apiEndpoint + '/customer/bill/showAll',jsonString,{observe : 'response'}).subscribe((response)=>{
       // console.log(response.body);

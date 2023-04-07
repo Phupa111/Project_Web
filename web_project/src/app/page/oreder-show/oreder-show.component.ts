@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from 'src/app/service/data.service';
 import { Convert as cartCVT,CartShow} from 'src/app/model/cart.model';
 
-import { Convert as bilCVT,Bill } from 'src/app/model/bill.model';
+import { AddressComponent } from '../address/address.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-oreder-show',
@@ -12,14 +13,13 @@ import { Convert as bilCVT,Bill } from 'src/app/model/bill.model';
   styleUrls: ['./oreder-show.component.scss']
 })
 export class OrederShowComponent {
-  dialog: any;
+
   carts =Array<CartShow>();
    sum=0;
-   bills = Array<Bill>();
-   length:any;
 
 
-  constructor(private dataService : DataService,private http : HttpClient,private route : Router)
+
+  constructor(private dataService : DataService,private http : HttpClient,private dialog:MatDialog)
   {
 
     console.log(dataService.getBid.bid);
@@ -103,79 +103,17 @@ sumCartItem()
   });
 }
 
-ConfirmBill(money:number)
+addAdress(money:number)
 {
-
-  if(this.dataService.cusDataLogin.money >= money && this.sum !=0)
-  {
-  let jsonObj = {
-     money:money,
-     cid:this.dataService.cusDataLogin.cid
-
-  }
-
-
-  let jsonString = JSON.stringify(jsonObj);
-  this.http.post(this.dataService.apiEndpoint + '/updateMoney' , jsonString,{observe : 'response'}).subscribe((response)=>{
-    // console.log(response.status);
-    // console.log(response.body);
-    this.dataService.cusDataLogin.money -= money;
-    this.updateBill(money);
-    this.insertBill(this.dataService.cusDataLogin.cid);
-  });
-
-  }
-
-}
-
-updateBill(money:number)
-{
-  let jsonObj = {
-    money:money,
-    bid:this.dataService.getBid.bid
-
- }
-
-
- let jsonString = JSON.stringify(jsonObj);
- this.http.post(this.dataService.apiEndpoint + '/updateBillsMoney' , jsonString,{observe : 'response'}).subscribe((response)=>{
-   // console.log(response.status);
-   // console.log(response.body);
- });
+  this.dialog.open(AddressComponent,{minWidth:'500px',});
+  console.log(money);
+  this.dataService.Money.money = money;
+  console.log("money2"+ this.dataService.Money.money);
 }
 
 
 
-insertBill(cid:number)
-  {
-    let jsonObj = {
-      cid :cid
-    }
-    let jsonString = JSON.stringify(jsonObj);
-    this.http.post(this.dataService.apiEndpoint + '/bill/insert' , jsonString,{observe : 'response'}).subscribe((response)=>{
-      // console.log(response.status);
-      // console.log(response.body)
-      this.getbils(cid);
 
-    })
-
-  }
-  getbils(cid:number)
-  {
-    this.http.get(this.dataService.apiEndpoint + "/bill/"+cid).subscribe((data :any)=>{
-      this.bills = bilCVT.toBill(JSON.stringify(data));
-
-     this.length = this.bills.length;
-    console.log(this.length-1);
-    console.log(this.bills);
-    this.setBid(this.bills[this.length-1].bid);
-  });
-}
-  setBid(bid:number)
-  {
-    this.dataService.getBid.bid =bid;
-    console.log(bid);
-  }
 
 
 }

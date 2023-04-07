@@ -1,4 +1,4 @@
-<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%;" *ngIf="dalog.length ==0">
+<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%;  color: black;">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">คาปิบาลาบ</h5>
@@ -13,7 +13,9 @@
         </div>
         <div style="display: flex;justify-content: center;margin-top: 15px;">
           <button type="submit" class="btn btn-primary" (click)="login(username.value,password.value)">Login</button>
+          <button class="btn btn-primary" style="margin-left: 5%;" routerLink="/register">Register</button>
         </div>
+
     </div>
   </div>
 
@@ -21,3 +23,4 @@
 <div style="display: flex;justify-content: center;align-items: center;">
   <button class="btn btn-danger" style="width: 250px;height: 35px;" routerLink="/ownerlogin">Go to Owner Login</button>
 </div>
+

@@ -1,0 +1,35 @@
+<div class="container-fluid" style="display: flex;justify-content: center;align-items: center;height: 60%; color: black;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center" style="color: black;font-size: 24px;font-weight: bold;">Register</h5>
+        <!-- <span class="center" style="color: black;font-size: 24px;font-weight: bold;">Login</span> -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required #username>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required #password>
+        </div>
+        <div class="form-group">
+          <label for="password">name</label>
+          <input type="text" class="form-control" id="name" name="name" required #name>
+        </div>
+        <div class="form-group">
+          <label for="adress">phone</label>
+          <input type="text" class="form-control" id="phone" name="phone" required #phone>
+        </div>
+        <div class="form-group">
+          <label for="adress">Adress</label>
+          <input type="text" class="form-control" id="Adress" name="address" required #address style="height: 100px; width: 500px;">
+        </div>
+        <div style="display: flex;justify-content: center;margin-top: 15px;">
+          <button class="btn btn-danger" style="margin-left: 5%;" routerLink="/login" >Back</button>
+        <div style="display: flex;justify-content: center;margin-top: 15px;">
+          <button class="btn btn-primary" style="margin-left: 5%;" (click)="register(name.value,username.value,password.value,phone.value,address.value)" routerLink="/login" >Register</button>
+        </div>
+
+    </div>
+  </div>
+
+</div>

@@ -9,7 +9,7 @@ import { OrederShowComponent } from './page/oreder-show/oreder-show.component';
 import { OwnerLoginComponent } from './componet/owner-login/owner-login.component';
 import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
 import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
-
+import { RegisterComponent } from './componet/register/register.component';
 const routes: Routes = [
   {path : '',component:MenuComponent},
   {path : 'owner',component:OwnerComponent},
@@ -19,7 +19,8 @@ const routes: Routes = [
   {path : 'login',component:LoginComponent},
   {path : 'ownerlogin',component:OwnerLoginComponent},
   {path : 'allbillcustomer',component:AllbillcustomerComponent},
-  {path : 'billCustomerDetail',component:BillCustomerDetailComponent}
+  {path : 'billCustomerDetail',component:BillCustomerDetailComponent},
+  {path : 'register',component:RegisterComponent}
 ];
 
 @NgModule({
