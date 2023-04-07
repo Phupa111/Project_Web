@@ -13,8 +13,10 @@ export class DataService{
   getBid = new getBid();
   cusDataLogin = new dataCusLogin();
   Blid = new Blid();
-  Money = new Money();
+ Money = new Money();
   constructor(){
+  ownerSeeCid = new ownerSeeCid();
+  checkOwnerLogin = new checkOwnerLogin();
 
 
   }
@@ -59,3 +61,10 @@ class Money
   money : number = 0;
 }
 
+class ownerSeeCid{
+  cid : number =0;
+}
+
+class checkOwnerLogin{
+  isLogin : boolean =false;
+}

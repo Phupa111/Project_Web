@@ -27,10 +27,16 @@ import { OwnerLoginComponent } from './componet/owner-login/owner-login.componen
 import { AllbillcustomerComponent } from './page/allbillcustomer/allbillcustomer.component';
 import {MatCardModule} from '@angular/material/card';
 import { BillCustomerDetailComponent } from './page/bill-customer-detail/bill-customer-detail.component';
+
 import { AddressComponent } from './page/address/address.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegisterComponent } from './componet/register/register.component';
 import { AddMoneyComponent } from './page/add-money/add-money.component';
+
+import { RegisterComponent } from './page/register/register.component';
+import { OwnerShowCusComponent } from './page/owner-show-cus/owner-show-cus.component';
+import { ShowCustomerDataDetaillComponent } from './page/show-customer-data-detaill/show-customer-data-detaill.component';
+
 
 
 
@@ -47,9 +53,15 @@ import { AddMoneyComponent } from './page/add-money/add-money.component';
     OwnerLoginComponent,
     AllbillcustomerComponent,
     BillCustomerDetailComponent,
+
     AddressComponent,
     RegisterComponent,
     AddMoneyComponent,
+
+    RegisterComponent,
+    OwnerShowCusComponent,
+    ShowCustomerDataDetaillComponent,
+
   ],
   imports: [
     BrowserModule,

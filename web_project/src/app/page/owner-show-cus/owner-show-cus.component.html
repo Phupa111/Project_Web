@@ -1,0 +1,25 @@
+<div style="display: flex;justify-content: end;margin-top: 10px;margin-right: 10px;">
+  <button mat-flat-button color="accent" routerLink="/owner">
+    <mat-icon><i>arrow_back_ios</i></mat-icon>
+    Back
+  </button>
+</div>
+
+<div class="container-fluid">
+  <div class="row" style="text-align: center;background-color: #EC4E4E ;height: 30px;border-radius: 5px;margin-top: 10px;font-size: 20px;align-items: center;" >
+    <span class="col-2">ID</span>
+    <span class="col-4">ชื่อ</span>
+    <span class="col-4">เงินทั้งหมด</span>
+    <span class="col-2" style="color: #EC4E4E ;">ดูรายละเอียด</span>
+  </div>
+  <div class="card"  style="margin-top: 5px;" *ngFor="let listCus of this.customer">
+    <div class="card-body">
+      <div class="row" style="align-items: center;height: 25px; border-radius: 5px;color: black;text-align: center;font-size: 15px;font-weight: bold;">
+        <span class="col-2">{{listCus.cid}}</span>
+        <span class="col-4">{{listCus.name}}</span>
+        <span class="col-4">{{listCus.money}}</span>
+        <button class="col-2" mat-flat-button style="background-color: #9DDC27  ;font-size: 12px;height: 25px;width: 150px;margin-left: 20px;" (click)="goDetail(listCus.cid)">ดูรายละเอียด</button>
+      </div>
+    </div>
+  </div>
+</div>
